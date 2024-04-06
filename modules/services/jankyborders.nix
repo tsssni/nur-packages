@@ -18,9 +18,11 @@ in
     environment.systemPackages = [ cfg.package ];
 
     launchd.user.agents.jankyborders = {
-      serviceConfig.ProgramArguments = [ "${cfg.package}/bin/borders" ];
-      serviceConfig.KeepAlive = true;
-      serviceConfig.RunAtLoad = true;
+      serviceConfig = {
+        ProgramArguments = [ "${cfg.package}/bin/borders" ];
+        KeepAlive = true;
+        RunAtLoad = true;
+      };
     };
   };
 }
