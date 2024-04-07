@@ -4,6 +4,10 @@ with lib;
 
 let
   cfg = config.services.jankyborders;
+  args = mkIf (cfg.config != {}) 
+    (concatStringsSep " " (mapAttrsToList
+      (k: v: "${k}=${toString v}")
+    cfg.config));
 in
 
 {
@@ -11,6 +15,20 @@ in
     services.jankyborders = {
       enable = mkEnableOption "jankyborders"; 
       package = mkPackageOption pkgs "jankyborders" {};
+      config = mkOption {
+        type = attrs;
+        default = {};
+        example = literalExpression ''
+          {
+            style = "round";
+            active_color = "0xffff0000";
+            width = 5.0;
+          }
+        '';
+        description = lib.mdDoc ''
+          Key/Value pairs to pass arguments to borders.
+        '';
+      };
     };
   };
 
@@ -19,7 +37,7 @@ in
 
     launchd.user.agents.jankyborders = {
       serviceConfig = {
-        ProgramArguments = [ "${cfg.package}/bin/borders" ];
+        ProgramArguments = [ "${cfg.package}/bin/borders" args];
         KeepAlive = true;
         RunAtLoad = true;
       };
