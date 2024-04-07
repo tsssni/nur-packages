@@ -8,10 +8,12 @@
         "aarch64-darwin"
       ];
       forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
-    in
-    {
-      packages = forAllSystems (system: import ./pkgs {pkgs = import nixpkgs {inherit system;};});
-      lib = import ./lib {lib = nixpkgs.lib;};
+    in {
+      overlays = import ./overlays;
+      packages = forAllSystems (
+        system: import ./pkgs {inherit nixpkgs system;}
+      );
       modules = ./modules;
+      lib = import ./lib {lib = nixpkgs.lib;};
     };
 }

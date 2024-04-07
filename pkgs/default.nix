@@ -1,4 +1,13 @@
-{ pkgs, ... }:
-{
-  v2raya = pkgs.callPackage ./v2raya {};
+{ nixpkgs, system }:
+let 
+pkgs = import nixpkgs {
+  overlays = import ../overlays;
+  inherit system;
+};
+in with pkgs; {
+  inherit 
+    v2raya 
+    darwin-fonts
+    darwin-nerd-fonts
+  ;
 }
