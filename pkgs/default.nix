@@ -9,5 +9,6 @@ in with pkgs; {
     v2raya 
     darwin-fonts
     darwin-nerd-fonts
+    darwin-symbols
   ;
 }

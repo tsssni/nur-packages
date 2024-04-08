@@ -16,14 +16,13 @@ stdenvNoCC.mkDerivation rec {
 
 
   nativeBuildInputs = [ p7zip ];
-  sourceRoot = ".";
   phases = [ "installPhase" ];
 
   installPhase = ''
     runHook preInstall
 
-    mkdir -p $out/share/fonts/opentype
-    cp ${sf-mono-nerd-liga}/*.otf $out/share/fonts/opentype
+    mkdir -p $out/share/fonts/opentype/darwin-nerd-fonts
+    cp ${sf-mono-nerd-liga}/*.otf $out/share/fonts/opentype/darwin-nerd-fonts
 
     runHook postInstall
   '';

@@ -1,7 +1,6 @@
 { lib
 , stdenvNoCC
 , fetchurl
-, fetchFromGitHub
 , p7zip
 }:
 stdenvNoCC.mkDerivation rec {
@@ -28,16 +27,7 @@ stdenvNoCC.mkDerivation rec {
     sha256 = "sha256-tn1QLCSjgo5q4PwE/we80pJavr3nHVgFWrZ8cp29qBk=";
   };
 
-  sf-mono-nerd-liga = fetchFromGitHub {
-    owner = "shaunsingh";
-    repo = "SFMono-Nerd-Font-Ligaturized";
-    rev = "dc5a3e6";
-    sha256 = "sha256-AYjKrVLISsJWXN6Cj74wXmbJtREkFDYOCRw1t2nVH2w=";
-  };
-
-
   nativeBuildInputs = [ p7zip ];
-  sourceRoot = ".";
   phases = [ "installPhase" ];
 
   installPhase = ''
@@ -73,11 +63,9 @@ stdenvNoCC.mkDerivation rec {
     mv Library/Fonts/* $out/fontfiles
     cd ..
 
-    cp ${sf-mono-nerd-liga}/*.otf $out/fontfiles
-
-    mkdir -p $out/share/fonts/opentype $out/share/fonts/truetype
-    mv $out/fontfiles/*.otf $out/share/fonts/opentype
-    mv $out/fontfiles/*.ttf $out/share/fonts/truetype
+    mkdir -p $out/share/fonts/opentype/darwin-fonts $out/share/fonts/truetype/darwin-fonts
+    mv $out/fontfiles/*.otf $out/share/fonts/opentype/darwin-fonts
+    mv $out/fontfiles/*.ttf $out/share/fonts/truetype/darwin-fonts
     rm -rf $out/fontfiles
 
     runHook postInstall
