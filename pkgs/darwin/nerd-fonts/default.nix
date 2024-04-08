@@ -5,7 +5,7 @@
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "darwin-nerd-fonts";
-  version = "0.0.1";
+  version = "latest";
 
   sf-mono-nerd-liga = fetchFromGitHub {
     owner = "shaunsingh";

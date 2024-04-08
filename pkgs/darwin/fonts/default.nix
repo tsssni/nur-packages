@@ -5,7 +5,7 @@
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "darwin-fonts";
-  version = "0.0.1";
+  version = "latest";
 
   sf-pro = fetchurl {
     url = "https://devimages-cdn.apple.com/design/resources/download/SF-Pro.dmg";

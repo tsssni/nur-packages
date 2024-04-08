@@ -10,5 +10,8 @@ in with pkgs; {
     darwin-fonts
     darwin-nerd-fonts
     darwin-symbols
+    wpsoffice
+    dingtalk
+    lark
   ;
 }

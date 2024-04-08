@@ -6,7 +6,7 @@
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "darwin-symbols";
-  version = "0.0.1";
+  version = "5.1";
 
   sf-symbols = fetchurl {
     url = "https://devimages-cdn.apple.com/design/resources/download/SF-Symbols-5.1.dmg";
