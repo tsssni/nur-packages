@@ -6,10 +6,11 @@ pkgs = import nixpkgs {
 };
 in with pkgs; {
   inherit 
-    v2raya 
     darwin-fonts
     darwin-nerd-fonts
     darwin-symbols
+    v2raya 
+    google-chrome
     wpsoffice
     dingtalk
     lark

@@ -1,9 +1,8 @@
 { lib
-, stdenvNoCC
+, buildDmgApp
 , fetchurl
-, undmg
 }:
-stdenvNoCC.mkDerivation rec {
+let
   pname = "wpsoffice";
   version = "3.2.0,6370";
 
@@ -16,19 +15,9 @@ stdenvNoCC.mkDerivation rec {
     url = "https://wdl1.pcfg.cache.wpscdn.com/wpsdl/macwpsoffice/download/${mainVersion}.${patch}/WPSOffice_${mainVersion}(${patch}).dmg";
     sha256 = "sha256-BCY2sWCZgCzY6RRbLF2zkBxBi8dE/uD1jOAyvaCVKpU=";
   };
-
-  nativeBuildInputs = [ undmg ];
-  phases = [ "installPhase" ];
-
-  installPhase = ''
-    runHook preInstall
-
-    undmg ${wpsoffice}
-    mkdir -p $out/Applications
-    cp -r wpsoffice.app $out/Applications
-
-    runHook postInstall
-  '';
+in
+buildDmgApp wpsoffice {
+  inherit pname version;
 
   meta = with lib; {
     description = "All-in-one office suite";
