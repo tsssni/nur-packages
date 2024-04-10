@@ -1,7 +1,8 @@
 { ... }:
 {
   imports = [
-    ./services/jankyborders.nix
-    ./services/v2raya.nix
+    ./services/visual/jankyborders.nix
+    ./services/visual/sketchyvim.nix
+    ./services/wired/v2raya.nix
   ];
 }

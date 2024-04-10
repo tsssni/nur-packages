@@ -1,4 +1,7 @@
-{ nixpkgs, system }:
+{ 
+  nixpkgs
+, system
+}:
 let 
 pkgs = import nixpkgs {
   overlays = import ../overlays;
@@ -9,10 +12,11 @@ in with pkgs; {
     darwin-fonts
     darwin-nerd-fonts
     darwin-symbols
-    v2raya 
     google-chrome
     wpsoffice
     dingtalk
     lark
+    sketchyvim
+    v2raya 
   ;
 }
