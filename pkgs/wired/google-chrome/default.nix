@@ -14,7 +14,7 @@ buildDmgAppImpure google-chrome "Google Chrome" {
 
   meta = with lib; {
     description = "The official web browser from Google";
-    homepage = "https://www.google.com/intl/en/chrome/://larksuite.com";
+    homepage = "https://www.google.com/intl/en/chrome/";
     license = licenses.unfree;
     platforms = platforms.darwin;
   };

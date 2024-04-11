@@ -2,7 +2,6 @@
 , stdenvNoCC
 , fetchurl
 , p7zip
-, darwin-fonts
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "darwin-symbols";
@@ -14,7 +13,6 @@ stdenvNoCC.mkDerivation rec {
   };
 
   nativeBuildInputs = [ p7zip ];
-  buildInputs = [ darwin-fonts ];
   phases = [ "installPhase" ];
 
   installPhase = ''

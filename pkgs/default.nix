@@ -16,6 +16,7 @@ in with pkgs; {
     wpsoffice
     dingtalk
     lark
+    sketchybar-lua
     sketchyvim
     v2raya 
   ;

@@ -22,7 +22,7 @@ in
   config = mkIf cfg.enable {
     environment.systemPackages = [ cfg.package ];
 
-    launchd.user.agents.jankyborders = {
+    launchd.user.agents.sketchyvim = {
       serviceConfig = {
         ProgramArguments = [ "${cfg.package}/bin/svim" ];
         KeepAlive = true;

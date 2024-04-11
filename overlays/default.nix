@@ -9,8 +9,11 @@
     google-chrome = final.callPackage ../pkgs/wired/google-chrome {};
     lark = final.callPackage ../pkgs/office/lark {};
     wpsoffice = final.callPackage ../pkgs/office/wpsoffice {};
+    sketchybar-lua = final.callPackage ../pkgs/visual/sketchybar-lua {
+      inherit (final.darwin.apple_sdk.frameworks) CoreFoundation;
+    };
     sketchyvim = final.callPackage ../pkgs/visual/sketchyvim {
-      inherit (final.darwin.apple_sdk.impure-deps.frameworks) Carbon Cocoa CoreText;
+      inherit (final.darwin.apple_sdk.frameworks) Carbon Cocoa CoreText;
     };
     v2raya = final.callPackage ../pkgs/wired/v2raya {};
   })
