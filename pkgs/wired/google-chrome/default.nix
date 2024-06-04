@@ -5,12 +5,12 @@
 let
   google-chrome = fetchurl {
     url = "https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg";
-    sha256 = "sha256-gbiH0TdFsodvlsHjX4v3bSPrDR2nIQ3OLCPTxW59WFQ=";
+    sha256 = "sha256-8OlzATGTC8t/dflmTFW2iU3rFgZQFP9xo2DYDQVlUFc=";
   };
 in
 buildDmgAppImpure google-chrome "Google Chrome" {
   pname = "google-chrome";
-  version = "124.0.6367.118";
+  version = "125.0.6422.142";
 
   meta = with lib; {
     description = "The official web browser from Google";

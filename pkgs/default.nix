@@ -11,7 +11,6 @@ in with pkgs; {
   inherit 
     darwin-fonts
     darwin-nerd-fonts
-    darwin-symbols
     google-chrome
     wpsoffice
     dingtalk

@@ -4,7 +4,7 @@
 }:
 let
   pname = "dingtalk";
-  version = "7.5.11,35928001";
+  version = "7.5.30,37289100";
 
   dingtalk = let
     versionSplit = lib.strings.splitString "," version;
@@ -12,7 +12,7 @@ let
     patch = builtins.elemAt versionSplit 1;
   in fetchurl {
     url = "https://dtapp-pub.dingtalk.com/dingtalk-desktop/mac_dmg/Release/M1-Beta/DingTalk_v${mainVersion}_${patch}_universal.dmg";
-    sha256 = "sha256-YFk53gt/YXkB3pALcW6KtxrteBALSQi6AF1AVIlIh/c=";
+    sha256 = "sha256-wefmS0+iAAwAYwO6BkPZKRQlRayqf0+7fWw1IPvGQPQ=";
   };
 in
 buildDmgApp dingtalk {

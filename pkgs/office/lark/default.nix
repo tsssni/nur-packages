@@ -4,10 +4,10 @@
 }:
 let
   pname = "lark";
-  version = "7.14.5";
+  version = "7.18.8";
   lark = fetchurl {
-    url = "https://sf16-va.larksuitecdn.com/obj/lark-artifact-storage/94173f78/Lark-darwin_arm64-${version}-signed.dmg";
-    sha256 = "sha256-UKnadn9CvxT9qtBaVYs3PLwHBTTNQ2/eswLYyiJACI8=";
+    url = "https://sf16-va.larksuitecdn.com/obj/lark-artifact-storage/58c0089d/Lark-darwin_arm64-${version}-signed.dmg";
+    sha256 = "sha256-vkork0IeVZF7IVsxRpj/t4UUIKUCIrnolickwL7npcI=";
   };
 in
 buildDmgApp lark {
