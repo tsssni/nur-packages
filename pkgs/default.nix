@@ -9,12 +9,7 @@ pkgs = import nixpkgs {
 };
 in with pkgs; {
   inherit 
-    darwin-fonts
     darwin-nerd-fonts
-    google-chrome
-    wpsoffice
-    dingtalk
-    lark
     sketchybar-lua
     sketchyvim
     v2raya 
